@@ -1,0 +1,10 @@
+.narad{
+    background:#0a2e0a;
+    color: gold;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px;
+    font-family: Arial;
+    text-shadow: 2px 2px 4px red;
+}
