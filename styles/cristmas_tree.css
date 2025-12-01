@@ -1,0 +1,46 @@
+.narad{
+    background:#0a2e0a;
+    color: gold;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px;
+    font-family: Arial;
+    text-shadow: 2px 2px 4px red;
+}
+body {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Neucha', cursive;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1;
+}
+.layout {
+    flex: 1 0 auto;
+    display: grid;
+    grid-template-columns: 400px 1fr 400px;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    height: auto;
+  }
+  
+  .left-panel, .right-panel {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    overflow-y: auto;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 24px;
+}

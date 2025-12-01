@@ -1,21 +1,40 @@
-
+<!DOCTYPE html>
 <html>
     <head>
-       <title>xmas tree</title>
-       <link rel="stylesheet" src="./styles/style.css" >
-        <title>НАРЯДИТЬ ЕЛКУ</title>
+    
+       <link rel="stylesheet" href="./styles/cristmas_tree.css" >
+        <title>xmas tree</title>
     </head>
     <body>
-        <img src="C:\Users\st\Downloads\oboitut.com_1480772098.jpg" alt="tree">
-    
-
+        <!-- <img src="./images/tree3.png" alt="tree"> -->
           <main>
-            <h1  class="narad">
-                НАРЯДИТЬ ЕЛКУ
-            </h1>
+          <!-- <button class="narad">НАРЯДИТЬ ЕЛКУ</button> -->
 
-        </main>
+           <div class="layout">
+            <aside class="left-panel">
+              <h2>Выберите ёлку</h2>
+              <div class="tree-grid"> </div>
         
+              <h2>Выберите фон</h2>
+              <div class="bg-grid"></div>
+        
+              <h2>Гирлянда</h2>
+              <div class="garland-grid"> </div>
+        
+              <div class="buttons">
+                <a class="button">Сохранить</a>
+                <a class="button">Сбросить настройки</a>
+              </div>
+            </aside>
+            <main class="tree-area">
+              <img src="./images/tree3.png" class="main-tree" />
+            </main>
+            <aside class="right-panel">
+              <h2>Игрушки</h2>
+              <div class="toys-grid"></div>
+            </aside>
+        </div>        
+        </main>
         <script src="./scripts/cristmas_tree.js"></script>
     </body>
 </html>
