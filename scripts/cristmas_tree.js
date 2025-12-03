@@ -137,9 +137,6 @@ let toys = [
 ];
 const toysgrid =document.querySelector(".toes-grid");
 toys.forEach((toy,index)=>{
-
-});
-
 const toybox=document.createElement("div");
 
 const img=document.createElement("img");
@@ -154,8 +151,49 @@ countbox.style.color="white";
 countbox.style.textAlign="center";
 countbox.style.fontSize="14px";
 
+toybox.appendChild(img);
+toybox.appendChild(countbox);
+toysgrid.appendChild(toybox);
+img.addEventListener("dragstart",e=>{
+    if(toy.count===0){
+        e.preventDefault();
+        return;
+    }
+    e.dataTransfer.setData("toy",index);
+}
+);
 
+});
+const treearea=document.querySelector(".tree-area");
+treearea.addEventListener("drop",e=>{e.preventDefault});
+const rect=treearea.getBoundingClientRect();
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+if(e.dataTransfer.getData("toy")!==""){
+const toyindex=e.dataTransfer.getData("toy");
+const toy=toys[toyindex];
+if (toy.count>0){
+    toy.count-=1;
+    const xpos=x-40;
+    const ypos=y-40;
+    const img=document.createElement("img");
+    img.src=toy.image;
+    img.classList.add("toyomtree");
+    img.style.left=xpos+"px";
+    img.style.top=ypos+"px";
+    treearea.appendChild(img);
+    currenttree.addtoy(toy,xpos,ypos);
+    img.addEventListener("click",()=>{
+        img.remove();
+        toy.count+=1;
+    toysgrid.children[toyindex].children[1].textContent=toy.count;
+        currenttree.toys=currenttree.toys.filter(t=>t.id!==toy.id);
+    });
+    
 
+}
+
+};
 
 
 
