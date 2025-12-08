@@ -49,5 +49,58 @@ body {
   background: rgba(214, 214, 214, 0.4);
   padding: 10px 30px;
   border-radius: 10px;
-  background-size: 80px 80px;
+  
+}
+
+.tree-grid{
+  background: rgba(214, 214, 214, 0.4);
+  padding: 10px 40px;
+  border-radius: 10px;
+  
+  
+}
+.button{
+  background: none;
+  border-radius: 10px;
+  border-color:lightblue ;
+  
+}
+.toy-on-tree {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;  
+  z-index: 5;            
+}
+.garland-on-tree {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 4;
+  animation: blink 1.6s infinite ease-in-out;
+}
+
+
+@keyframes blink {
+0%   { opacity: 1; }
+50%  { opacity: 0.3; }
+100% { opacity: 1; }
+}
+
+
+.toys-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.toy {
+  /* background: #e3cbc2; */
+  background: rgba(214, 214, 214, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.tree-area {
+  position: relative;
 }
