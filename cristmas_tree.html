@@ -14,10 +14,7 @@
             <aside class="left-panel">
               <h2>Выберите ёлку</h2>
               <div class="trees"> 
-                <img src="images/tree3.png" class="tree-grid" width="80px" height="120px">
-                <img src="images/tree1.png" class="tree-grid" width="91px" height="120px">
-                <img src="images/tree2.png" class="tree-grid" width="64px" height="120px">
-                <img src="images/tree4.png" class="tree-grid" width="82px" height="120px">
+               
                 </div>
               <h2>Выберите фон</h2>
               <div class="bg-grid"></div>
@@ -26,8 +23,8 @@
               <div class="garland-grid"> </div>
         
               <div class="buttons">
-                <a class="button">Сохранить</a>
-                <a class="button">Сбросить настройки</a>
+                <a class="button" id="save-tree-btn">Сохранить</a>
+                <a class="button" id="reset-tree-btn">Сбросить настройки</a>
               </div>
             </aside>
             <main class="tree-area">
@@ -35,17 +32,20 @@
             </main>
             <aside class="right-panel">
               <h2>Игрушки</h2>
-              <div class="toys-grid"></div>
+              <div class="toys-grid">
+
+              </div>
          
   
             </aside>
             <div class="garland-grid">
-              <!-- <img src="./images/Garland_1.png" class="garland">
-              <img src="/images/Garland_2.png" class="garland">
-              <img src="./images/Garland_3.png" class="garland"> -->
+              
             </div>
         </div>        
         </main>
+        <audio id="xmas-audio" loop>
+          <source src="./audio/jingle-bells.mp3" type="audio/mpeg">
+        </audio>
         <script src="./scripts/cristmas_tree.js"></script>
     </body>
 </html>

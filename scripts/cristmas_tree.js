@@ -1,66 +1,3 @@
-/*let empty =[];
-let num=[1,2,3];
-let fruits=["яблоко"];
-let films=["corol talsi","plan pobega","illusia obmana"];
-
-function showFilms () {
-    for (let film of films) {
-    console.log(films);
-}
-}
-showFilms();
-let students=[
-    {name:"Anna",age:15},
-    {name:"Igor",age:16}
-];
-for (let stud of students){
-    console.log(students.name);
-}
-let numbers=[1,2,3];
-numbers.push(4);
-console.log(numbers);
-let games=["voleyball","football"];
-games.push("basketball");
-console.log(games);
-
-
-let nums=[5,15,20];
-let removed=nums.pop();
-console.log(removed);
-
-let n=[2,3];
-n.unshift(1);
-console.log(n);
-
-let nn=[1,2,3];
-let first=nn.shift();
-console.log(nn);
-console.log(first);
-
-let colors=["red","green","blue"];
-console.log(colors.indexOf(green));
-console.log(colors.indexOf(black));
-
-
-let nnn=[10,20,30,40];
-let part=nnn.slice(1,3);
-console.log(part);
-console.log(nnn);
-
-
-let nnnn=[10,20,30,40,50];
-let remove=nnnn.slice(1,2);
-console.log(nnnn);
-console.log(remove);
-
-let word=["hello","world"];
-let mes=word.join(" ");
-console.log(mes);
-
-let nnnnn=[1,2,3];
-nnnnn.reverse();
-console.log(nnnnn);
-*/
 let toys = [
     { 
         name: "Желтая игрушка с цветком",
@@ -114,7 +51,7 @@ let toys = [
         year: 2023 ,
         shape: "ball", 
         favorite: true, 
-        image: "./images/5297.png" 
+        image: "./images/5309.png" 
     },
     { 
         name: "Синяя игрушка с цветком", 
@@ -123,7 +60,7 @@ let toys = [
         year: 2023 , 
         shape: "ball", 
         favorite: true, 
-        image: "./images/5300.png" 
+        image: "./images/5307.png" 
     },
     { 
         name: "Черная игрушка с цветком", 
@@ -132,7 +69,7 @@ let toys = [
         year: 2023 , 
         shape: "ball", 
         favorite: true, 
-        image: "./images/5305.png" 
+        image: "./images/5298.png" 
     },{
     name: "Желтая игрушка с цветком",
     color: "red", 
@@ -140,7 +77,7 @@ let toys = [
     year: 2023, 
     shape: "ball", 
     favorite: true,
-    image: "./images/5294.png" 
+    image: "./images/5299.png" 
    },
 { 
    name: "Красная игрушка с цветком", 
@@ -149,7 +86,7 @@ let toys = [
    year: 2023 ,
    shape: "ball", 
    favorite: true, 
-   image: "./images/5306.png" 
+   image: "./images/5301.png" 
 },
 { 
    name: "Синяя игрушка с цветком", 
@@ -158,7 +95,7 @@ let toys = [
    year: 2023 , 
    shape: "ball", 
    favorite: true, 
-   image: "./images/5300.png" 
+   image: "./images/5302.png" 
 },
 { 
    name: "Черная игрушка с цветком", 
@@ -167,7 +104,7 @@ let toys = [
    year: 2023 , 
    shape: "ball", 
    favorite: true, 
-   image: "./images/5305.png" 
+   image: "./images/5308.png" 
 },
 { 
    name: "Желтая игрушка с цветком",
@@ -176,7 +113,7 @@ let toys = [
     year: 2023, 
     shape: "ball", 
     favorite: true,
-    image: "./images/5297.png" 
+    image: "./images/5303.png" 
    },
 { 
    name: "Красная игрушка с цветком", 
@@ -203,9 +140,15 @@ let toys = [
    year: 2023 , 
    shape: "ball", 
    favorite: true, 
-   image: "./images/5305.png" 
+   image: "./images/5296.png" 
 },
 ];
+
+
+
+
+
+  
 
 let currentTree = {
     type: "",
@@ -357,6 +300,59 @@ treeArea.addEventListener("drop", e => {
     });
   }
 });
+
+const speakerBtn = document.getElementById("speaker-btn");
+const audio = document.getElementById("xmas-audio");
+
+let musicOn = false;
+
+speakerBtn.addEventListener("click", () => {
+  if (!musicOn) {
+    audio.play();
+    musicOn = true;
+    speakerBtn.classList.add("sound-on");
+  } else {
+    audio.pause();
+    musicOn = false;
+    speakerBtn.classList.remove("sound-on");
+  }
+});
+
+let treeData = {
+  type:currentTree.type,
+  garland:currentTree.garland,
+  toys:currentTree.toys
+};
+
+function getResultCurrentTreeData(){
+  const getResultCurrentTreeData={
+    type:currentTree.type,
+    garland:currentTree.garland,
+    toys:currentTree.toys.map(toy=>({
+      id:toy.id,
+      x:toy.x,
+      y:toy.y,
+      image:toy.image
+    }))
+  };
+  return ResultCurrentTreeData;
+}
+
+const saveTreeBtn=document.getElementById("save-tree-btn");
+saveTreeBtn.addEventListener("click",()=>{
+  const ResultCurrentTreeData=getResultCurrentTreeData();
+  console.log(ResultCurrentTreeData);
+
+  const ResultCurrentTreeJSON=JSON.stringify(ResultCurrentTreeData);
+  console.log(ResultCurrentTreeJSON);
+});
+
+
+fetch("/data")
+.then(response=>response.json())
+.then(data=>console.log(data));
+
+
 
 
 

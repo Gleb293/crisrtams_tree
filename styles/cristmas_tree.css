@@ -91,6 +91,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  
 }
 
 .toy {
@@ -99,8 +102,15 @@ body {
   padding: 10px;
   border-radius: 10px;
   object-fit: contain;
+  
 }
 
 .tree-area {
   position: relative;
 }
+.button{
+background: rgba(214, 214, 214, 0.4);
+border-radius: 10px;
+
+}
+
