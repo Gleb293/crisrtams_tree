@@ -2,7 +2,7 @@ let toys = [
     { 
         name: "Желтая игрушка с цветком",
          color: "red", 
-         count: 5, 
+           count: 5, 
          year: 2023, 
          shape: "ball", 
          favorite: true,
@@ -109,7 +109,7 @@ let toys = [
 { 
    name: "Желтая игрушка с цветком",
     color: "red", 
-    count: 5, 
+    // count: 5, 
     year: 2023, 
     shape: "ball", 
     favorite: true,
@@ -118,7 +118,7 @@ let toys = [
 { 
    name: "Красная игрушка с цветком", 
    color: "red", 
-   count: 5, 
+  //  count: 5, 
    year: 2023 ,
    shape: "ball", 
    favorite: true, 
@@ -351,6 +351,47 @@ saveTreeBtn.addEventListener("click",()=>{
 fetch("/data")
 .then(response=>response.json())
 .then(data=>console.log(data));
+
+
+fetch("/data")
+.then(response=>{
+  if (!response.ok){
+    throw new Error("ошибка сервера");
+  }
+  return response.json();
+})
+.then(data=>{
+  console.log("данные получены",data);
+});
+
+saveTreeBtn.addEventListener ("click", ()=>{
+const ResultCurrentTreeData=getResultCurrentTreeData();
+const ResultCurrentTreeJSON=JSON.stringify(ResultCurrentTreeData);
+
+fetch("/save-tree",{
+  method:"POST",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body:ResultCurrentTreeJSON
+})
+ .then(response=>{
+  if(!response.ok){
+    throw new Error("Ошибка при сохранении елки");
+  }
+  return response.json();
+ })
+.then(data=>{
+  console.log("Ответ сервера",data);
+  alert("Елка сохранена");
+})
+.catch (error=>{
+  console.log("Не удалось сохранить елку");
+});
+
+});
+
+ 
 
 
 
