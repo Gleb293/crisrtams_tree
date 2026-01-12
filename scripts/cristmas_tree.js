@@ -301,22 +301,22 @@ treeArea.addEventListener("drop", e => {
   }
 });
 
-const speakerBtn = document.getElementById("speaker-btn");
-const audio = document.getElementById("xmas-audio");
+// const speakerBtn = document.getElementById("speaker-btn");
+// const audio = document.getElementById("xmas-audio");
 
-let musicOn = false;
+// let musicOn = false;
 
-speakerBtn.addEventListener("click", () => {
-  if (!musicOn) {
-    audio.play();
-    musicOn = true;
-    speakerBtn.classList.add("sound-on");
-  } else {
-    audio.pause();
-    musicOn = false;
-    speakerBtn.classList.remove("sound-on");
-  }
-});
+// speakerBtn.addEventListener("click", () => {
+//   if (!musicOn) {
+//     audio.play();
+//     musicOn = true;
+//     speakerBtn.classList.add("sound-on");
+//   } else {
+//     audio.pause();
+//     musicOn = false;
+//     speakerBtn.classList.remove("sound-on");
+//   }
+// });
 
 let treeData = {
   type:currentTree.type,
@@ -391,10 +391,47 @@ fetch("/save-tree",{
 
 });
 
- 
+setTimeout(()=>{
+  console.log("privet");
+},2000);
 
+setTimeout(()=>{
+  console.log("loading...");
+},5000);
 
+const name="alex";
+setTimeout(()=>{
+  console.log("privet "+name);
+},1000);
 
+function sayhello(){
+  console.log("hello");
+}
+setTimeout(sayhello,1500)
+
+let timerid =setTimeout(()=>alert("nothing"),1000);
+alert(timerid);
+clearTimeout(timerid);
+alert(timerid);
+
+setInterval(()=>{
+  console.log("proshla 1 sek");
+},1000);
+
+setInterval(()=>{
+  console.log("tik");
+},3000);
+
+const timeoutid =setTimeout(()=>{
+  console.log("boom");
+},5000);
+clearTimeout(timeoutid);
+
+let count=1;
+setInterval(() => {
+  console.log(count);
+  
+}, );
 
 
 
