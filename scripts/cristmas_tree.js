@@ -434,8 +434,41 @@ setInterval(() => {
 }, );
 
 
+const timeout=setTimeout(()=>{
+  console.log("srabotel");
+},5000);
+setTimeout(()=>{
+  clearTimeout(timeout);
+  console.log("otmene");
+},2000);
+
+const btn=document.querySelector("button");
+btn.addEventListener("click",()=>{
+  setTimeout(()=>{
+    alert("gotovo");
+
+  },2000);
+});
 
 
+setTimeout(()=>{
+  alert("1");
+},1000);
+setTimeout(()=>{
+  alert("2");
+},2000);
+setTimeout(()=>{
+  alert("3");
+},3000);
+setTimeout(()=>{
+  alert("4");
+},4000);
+setTimeout(()=>{
+  alert("5");
+},5000);
+setTimeout(()=>{
+  alert("strart");
+},6000);
 
 
 
