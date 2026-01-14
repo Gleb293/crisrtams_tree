@@ -390,7 +390,7 @@ fetch("/save-tree",{
 });
 
 });
-
+/*
 setTimeout(()=>{
   console.log("privet");
 },2000);
@@ -469,7 +469,17 @@ setTimeout(()=>{
 setTimeout(()=>{
   alert("strart");
 },6000);
+*/
 
+let time=5;
+const id=setInterval(()=>{
+  console.log(time);
+  time--;
+  if(time===0){
+    console.log("start!");
+    clearInterval(id);
+  }
+},1000);
 
 
 
